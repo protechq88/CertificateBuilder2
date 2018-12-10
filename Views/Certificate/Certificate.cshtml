@@ -1,0 +1,39 @@
+﻿
+@model CertificateBuilder2.Models.CertificateModel
+    @{ 
+        Layout = null;
+    }
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Certificate</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Styles.Render("~/Content/themes/base/css")
+
+    <link type="text/css" href="@Url.Content("~/Content/themes/base/jquery-ui.min.css")" rel="stylesheet" />
+    @*<link type="text/css" href="@Url.Content("~/Content/spectrum.css")" rel="stylesheet" />*@
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryui")
+
+</head>
+<body>
+    @Html.React("CertificateBuilder", new
+{
+    initialData = Model,
+})
+   @*<div id="root" />*@
+       <script src="/Scripts/bootstrap.min.js"></script>
+    <script
+  src="http://code.jquery.com/ui/1.12.1/jquery-ui.js"
+  integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
+  crossorigin="anonymous"></script>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+
+    <script src="/Scripts/certificate.jsx"></script>
+    @Html.ReactInitJavaScript()
+</body>
+
+</html>
